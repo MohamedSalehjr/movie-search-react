@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieCard from './movieCard';
+import {key} from "../config"
 export default function SearchMovies(){
 
     const [query,setQuery] = React.useState('');
@@ -8,7 +9,7 @@ export default function SearchMovies(){
     const searchMovies = async (e) => {
         e.preventDefault();
 
-        const url = `https://api.themoviedb.org/3/search/movie?api_key=24e81d603d8c2f52576d329228a77506&language=en-US&query=${query}&page=1&include_adult=false`;
+        const url = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${query}&page=1&include_adult=false`;
 
         try{
             const res = await fetch(url);

@@ -26,7 +26,7 @@ export default function SearchMovies(){
             <input type="text" className="ml-4 p-4 rounded border" name="query" onChange={(e) => setQuery(e.target.value)} value={query} placeholder="i.e. Jurassic Park"></input>
             <button type="submit" className="ml-4 w-fit-content p-4  rounded text-white bg-black hover:bg-blue-400">Search</button>
         </form>
-        <div className="mt-8 px-12 card-list grid grid-cols-2 gap-4">
+        <div className="mt-8 px-12 card-list grid grid-cols-1 sm:grid-cols-2 gap-4">
             {movies.filter(movie => movie.poster_path).map(movie => 
                 <MovieCard imgSrc={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`} 
                 key={movie.id} 
